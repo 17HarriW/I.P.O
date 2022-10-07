@@ -11,12 +11,8 @@ namespace I.P.O
         static void Main(string[] args)
         {
             int radius = Input();
-
-            // Process - Calculate volume of a sphere
-            double volume = Math.PI * (4/3) * (radius ^ 3);
-
-            // Output - Display volume
-            Console.WriteLine($"The volume is {volume}");
+            double volume = CalcVolume(radius);
+            Output(volume);
 
             Console.ReadLine();
 
@@ -28,6 +24,17 @@ namespace I.P.O
             string strRadius = Console.ReadLine();
             int radius = int.Parse(strRadius);
             return radius;
+        }
+        static double CalcVolume(int radius)
+        {
+            // Process - Calculate volume of a sphere
+            double volume = Math.PI * (4 / 3) * (radius * radius * radius);
+            return volume;
+        }
+        static void Output(double volume)
+        {
+            // Output - Display volume
+            Console.WriteLine($"The volume is {volume}");
         }
     }
 }
